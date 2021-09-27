@@ -155,7 +155,7 @@ const sumYou = (arr) => {
       //conditional statements takes in an array and returns an array of the accumulating sum or an empty array....attempting tenary operator
       // })
       //using .map() and addition for arrays with values as string interpolation. None of that worked. Research time.
-  let ans = 0;
+ let ans = 0;
   let sumArr = arr.length < 1? (
     []
   ) : (
@@ -165,7 +165,7 @@ const sumYou = (arr) => {
         // []
         //Got a hold bunch of wrong. Glad that it tested. Now to get the wording correct. I really want to get the hang of these HOF and ternary operators. I see now that I was telling it to add the value of the index to the value. Making a variable to start adding 0 to the first value. Keeping map to iterate the adding the answer to the next value. Whew! I am proud of this work. I completed it 10 pm. I took breaks too.
     arr.map(d=>{
-      return ans + d
+      return ans += d
     })
   );
   return sumArr;

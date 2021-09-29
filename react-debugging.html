@@ -61,24 +61,41 @@
             padding: "10px"
           }
           // No need to change anything ABOVE this line ^
-          
+
           return(
+          //React fragments need to encapsulated the text.
+
+          //***At first I was going to delete my desperation pseudocode but I will keep it on here to remind myself to slow down. I am certainly willing to see a problem through...I just don't want to create more problems when finding a solution to one. Debugging is reminding me to use what is already provided. The items encapsulated in `***` is my calm developer brain speaking.***
+
+          //Clicking the button will draw a card. I feel that the cards should appear when calling on the object..but I don't see the the cards that will be drawn or shuffled.
+          //*****So after talking to a classmate about the concept. I see that I really got into desperation mode. I had to slow down and see what function needed to be rendered when clicking a button. I was using `this.` with the wrong elements. this.drawCard and this.shuffle allowed the rank and suit to appear.***
+
+          //I am not sure how to place the className onto the div. The exmaples in class when dealing with html file showed us making separate classes to render different portions onto the DOM. I am not certain how to call upon the cards when being restricted to work only on this return section.
+          //***Issue handled with the previous correction. Good gravy! After calming down and not going into desperation mode...and code counseling with a fellow classmate. I was able to get cards on the screen. Confetti!!! I learned to just correct one hing at a time and see what happens before going on a "I know what to do now" tangent...because "I know" turns into "What just happened?"***
+
+          //***Questions???
+          // When I use the this.cardstyles..I do not get a card with a border anymore...Why?
+          // Is the div style after the second return an anonymous function?
+          // ***
+
+          <>
               <h1>Draw a Card</h1>
-              <button onClick={}>
+              <button onClick = {this.drawCard}>
                 Click to Draw a Card
               </button>
-              <button onClick={shuffle}>
+              <button onClick = {this.shuffle}>
                 Return Cards and Shuffle Deck
               </button>
-              <div style={handStyles}>
+              <div style = {this.handStyles}>
                 {this.state.hand.map((card, index) => {
                   return (
-                    <div style={cardStyles} key={index}>
+                    <div style = {cardStyles} key = {index}>
                       {card}
                     </div>
                   )
                 })}
-              </div>
+                </div>
+            </>
           )
         }
       }
